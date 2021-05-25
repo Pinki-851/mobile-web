@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/projectPlan/static/css/main.784fb128.chunk.css",
+    "main.js": "/projectPlan/static/js/main.b18578c6.chunk.js",
+    "main.js.map": "/projectPlan/static/js/main.b18578c6.chunk.js.map",
+    "runtime-main.js": "/projectPlan/static/js/runtime-main.6ef88ca2.js",
+    "runtime-main.js.map": "/projectPlan/static/js/runtime-main.6ef88ca2.js.map",
+    "static/js/2.c50c0651.chunk.js": "/projectPlan/static/js/2.c50c0651.chunk.js",
+    "static/js/2.c50c0651.chunk.js.map": "/projectPlan/static/js/2.c50c0651.chunk.js.map",
+    "index.html": "/projectPlan/index.html",
+    "static/css/main.784fb128.chunk.css.map": "/projectPlan/static/css/main.784fb128.chunk.css.map",
+    "static/js/2.c50c0651.chunk.js.LICENSE.txt": "/projectPlan/static/js/2.c50c0651.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6ef88ca2.js",
+    "static/js/2.c50c0651.chunk.js",
+    "static/css/main.784fb128.chunk.css",
+    "static/js/main.b18578c6.chunk.js"
+  ]
+}
