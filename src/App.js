@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import NavBar from "./components/Layout/Navbar";
 import ProjectDetail from "./components/Projects/ProjectDetail";
@@ -21,7 +26,7 @@ const App = () => {
   }, []);
   return (
     <div className="app_container">
-      <BrowserRouter>
+      <Router>
         <NavBar />
         <Switch>
           <Route exact path="/" component={Dashboard} />
@@ -30,7 +35,7 @@ const App = () => {
           <Route path="/signup" component={Signup} />
           <Route path="/createproject" component={CreateProject} />
         </Switch>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 };

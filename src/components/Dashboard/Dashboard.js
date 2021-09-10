@@ -7,12 +7,12 @@ import { Redirect } from "react-router";
 
 class Dashboard extends Component {
   componentDidMount() {
-    console.log("componentDidMount");
     this.props.showProjectData();
   }
   render() {
     const { showData, auth } = this.props;
-    console.log(auth);
+    // console.log(this.props);
+    // console.log(auth);
     return (
       <>
         {!auth ? (
