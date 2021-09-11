@@ -238,3 +238,15 @@ button.btn:hover {
   text-transform: uppercase;
   margin-right: 50px;
 }
+@media screen and (max-width: 480px) {
+  .logo_container {
+    width: 40%;
+  }
+
+  .nav_menu_container {
+    width: 60%;
+  }
+  ul li {
+    width: 100px;
+  }
+}

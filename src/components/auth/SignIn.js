@@ -22,9 +22,6 @@ export class SignIn extends Component {
     console.log(auth);
     history.push("/");
   };
-  redirectToHome = () => {
-    // !auth ? history.push("/signin") : history.push("/");
-  };
 
   render() {
     const { authErr, auth } = this.props;
@@ -36,7 +33,6 @@ export class SignIn extends Component {
             onSubmit={(event) => {
               this.handleSubmit(event);
               console.log(auth);
-              this.redirectToHome();
             }}
           >
             <p className="sign_head">Sign In</p>

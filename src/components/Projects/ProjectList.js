@@ -3,6 +3,7 @@ import ProjectSummury from "./ProjectSummury";
 import { connect } from "react-redux";
 import { isLoadedAction } from "../../store/Action/ProjectAction";
 import { isLoaded } from "react-redux-firebase";
+import { Redirect } from "react-router";
 
 const ProjectList = (props) => {
   console.log("props", props);
@@ -13,11 +14,15 @@ const ProjectList = (props) => {
   return (
     <div className="projectlist">
       {isLoaded ? (
-        <div>
-          {props.projects.map((val, index) => {
-            return <ProjectSummury project={val} key={val.id} />;
-          })}
-        </div>
+        !props.project ? (
+          <Redirect to="/createproject" />
+        ) : (
+          <div>
+            {props.projects.map((val, index) => {
+              return <ProjectSummury project={val} key={val.id} />;
+            })}
+          </div>
+        )
       ) : (
         <p>project loading....</p>
       )}
