@@ -19,7 +19,7 @@ const ProjectReducer = (state = initialstate, action) => {
       return state;
     }
     case "SHOW_PROJECT_DATA": {
-      // console.log("showReducer");
+      // console.log("showReducer", action.payload);
       return { ...state, showData: action.payload };
     }
     case "SHOW_PROJECT_DATA_ERR": {
