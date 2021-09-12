@@ -7,6 +7,8 @@ import { Redirect } from "react-router";
 
 const ProjectList = (props) => {
   console.log("props", props);
+  console.log("prosLength", props.projects.length);
+
   useEffect(() => {
     props.isLoadedAction();
     console.log("loaded");
@@ -14,14 +16,15 @@ const ProjectList = (props) => {
   return (
     <div className="projectlist">
       {isLoaded ? (
-        !props.project ? (
-          <Redirect to="/createproject" />
-        ) : (
+        props.projects.length >= 1 ? (
           <div>
             {props.projects.map((val, index) => {
               return <ProjectSummury project={val} key={val.id} />;
             })}
           </div>
+        ) : (
+          (console.log(props.projects.length),
+          (<Redirect to="/createproject" />))
         )
       ) : (
         <p>project loading....</p>

@@ -18,7 +18,7 @@ export const signIn = (credential) => async (dispatch, getState) => {
 };
 
 export const signOut = () => (dispatch, getState) => {
-  console.log("logout");
+  // console.log("logout");
   firebase
     .auth()
     .signOut()
@@ -28,6 +28,7 @@ export const signOut = () => (dispatch, getState) => {
 };
 
 export const changeState = () => (dispatch, getState) => {
+  // console.log("changestate");
   firebase.auth().onAuthStateChanged((user) => {
     console.log(user);
     dispatch({ type: "CHANGE_STATE", payload: user });
@@ -35,7 +36,7 @@ export const changeState = () => (dispatch, getState) => {
 };
 
 export const signUp = (newuser) => async (dispatch, getState) => {
-  console.log("signup", newuser);
+  // console.log("signup", newuser);
   await firebase
     .auth()
     .createUserWithEmailAndPassword(newuser.email, newuser.password)
@@ -64,10 +65,10 @@ export const signUp = (newuser) => async (dispatch, getState) => {
     });
 };
 export const getUserData = () => (dispatch, getState) => {
-  console.log("getUserDta");
+  // console.log("getUserDta");
   firebase.auth().onAuthStateChanged((user) => {
     const uid = user.uid;
-    // console.log(uid);
+    console.log(uid);
     userRef
       .doc(uid)
       .get()

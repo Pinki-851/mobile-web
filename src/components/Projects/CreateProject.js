@@ -2,6 +2,7 @@ import React, { Component, createRef } from "react";
 import {
   createProject,
   getNotification,
+  showProjectData,
 } from "../../store/Action/ProjectAction";
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
@@ -11,15 +12,16 @@ export class CreateProject extends Component {
   handleChange = (event) => {
     this.setState({ [event.target.id]: event.target.value });
   };
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
     const getUserCollection = this.props.getUserCollection;
-    console.log(getUserCollection);
-    this.props.createProject(this.state, getUserCollection);
+    await this.props.createProject(this.state, getUserCollection);
+    console.log("creategetuser", getUserCollection);
+    // debugger;
+    await this.props.showProjectData();
     const { history } = this.props;
     history.push("/");
-    this.props.getNotification();
-    console.log(this.state);
+    // this.props.getNotification();
   };
 
   textarea = createRef();
@@ -81,6 +83,7 @@ const mapStateToProps = (state) => {
   return {
     auth: state.auth.auth,
     getUserCollection: state.auth.getUserCollection,
+    showData: state.project.showData,
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -88,6 +91,7 @@ const mapDispatchToProps = (dispatch) => {
     createProject: (projects, Detail) =>
       dispatch(createProject(projects, Detail)),
     getNotification: () => dispatch(getNotification()),
+    showProjectData: () => dispatch(showProjectData()),
   };
 };
 

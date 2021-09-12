@@ -4,15 +4,20 @@ import ProjectList from "../Projects/ProjectList";
 import { connect } from "react-redux";
 import { showProjectData } from "../../store/Action/ProjectAction";
 import { Redirect } from "react-router";
+import { changeState } from "../../store/Action/authAction";
 
 class Dashboard extends Component {
   componentDidMount() {
+    // debugger;
     this.props.showProjectData();
+    this.props.changeState();
+    console.log("dashchange");
   }
   render() {
     const { showData, auth } = this.props;
     // console.log(this.props);
-    // console.log(auth);
+    console.log("dashauth", auth);
+    console.log("showData", showData);
     return (
       <>
         {!auth ? (
@@ -40,6 +45,7 @@ const mapDispatchToProps = (dispatch) => {
   // console.log("dispatch");
   return {
     showProjectData: () => dispatch(showProjectData()),
+    changeState: () => dispatch(changeState()),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

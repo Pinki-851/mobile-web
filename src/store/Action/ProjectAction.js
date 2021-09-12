@@ -1,32 +1,34 @@
 import firebase from "../../config/fbconfig";
 const Ref = firebase.firestore().collection("projects");
 
-export const createProject = (projects, Detail) => (dispatch, getState) => {
-  console.log(projects, Detail);
+export const createProject =
+  (projects, Detail) => async (dispatch, getState) => {
+    // console.log(projects, Detail);
 
-  Ref.doc(Detail.id)
-    .set({
-      ...projects,
-      authorFirstName: Detail.authorFirstName,
-      authorLastName: Detail.authorLastName,
-      authorId: Detail.id,
-      initial: Detail.initials,
-      createdAt: new Date(),
-    })
-    .then(() => {
-      dispatch({ type: "CREATE_PROJECT", payload: projects });
-      console.log("success");
-    })
-    .catch((err) => {
-      dispatch({ type: "CREATE_PROJECT_ERROR", payload: err });
-      console.log({ err });
+    await Ref.doc(Detail.id)
+      .set({
+        ...projects,
+        authorFirstName: Detail.authorFirstName,
+        authorLastName: Detail.authorLastName,
+        authorId: Detail.id,
+        initial: Detail.initials,
+        createdAt: new Date(),
+      })
+      .then(() => {
+        dispatch({ type: "CREATE_PROJECT", payload: projects });
+        console.log("success");
+      })
+      .catch((err) => {
+        dispatch({ type: "CREATE_PROJECT_ERROR", payload: err });
+        console.log({ err });
+      });
+    Ref.onSnapshot((snapshot) => {
+      console.log(snapshot);
     });
-  Ref.onSnapshot((snapshot) => {
-    console.log(snapshot);
-  });
-};
-export const showProjectData = () => (dispatch, getState) => {
-  Ref.orderBy("createdAt", "desc")
+  };
+export const showProjectData = () => async (dispatch, getState) => {
+  // debugger;
+  await Ref.orderBy("createdAt", "desc")
     .get()
     .then((item) => {
       const items = item.docs.map((doc) => doc.data());
@@ -53,7 +55,7 @@ export const isLoadedAction = () => (dispatch, getState) => {
 
 export const getNotification = () => (dispatch, getState) => {
   const messaging = firebase.messaging();
-  messaging.onMessaging()
+  messaging.onMessaging();
   messaging
     .requestPermission()
     .then(() => {
