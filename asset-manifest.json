@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/projectPlan/static/css/main.ac845687.chunk.css",
+    "main.css": "/projectPlan/static/css/main.230d65f7.chunk.css",
     "main.js": "/projectPlan/static/js/main.ed084c3d.chunk.js",
     "main.js.map": "/projectPlan/static/js/main.ed084c3d.chunk.js.map",
     "runtime-main.js": "/projectPlan/static/js/runtime-main.6ef88ca2.js",
@@ -8,13 +8,13 @@
     "static/js/2.ebf71c0d.chunk.js": "/projectPlan/static/js/2.ebf71c0d.chunk.js",
     "static/js/2.ebf71c0d.chunk.js.map": "/projectPlan/static/js/2.ebf71c0d.chunk.js.map",
     "index.html": "/projectPlan/index.html",
-    "static/css/main.ac845687.chunk.css.map": "/projectPlan/static/css/main.ac845687.chunk.css.map",
+    "static/css/main.230d65f7.chunk.css.map": "/projectPlan/static/css/main.230d65f7.chunk.css.map",
     "static/js/2.ebf71c0d.chunk.js.LICENSE.txt": "/projectPlan/static/js/2.ebf71c0d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6ef88ca2.js",
     "static/js/2.ebf71c0d.chunk.js",
-    "static/css/main.ac845687.chunk.css",
+    "static/css/main.230d65f7.chunk.css",
     "static/js/main.ed084c3d.chunk.js"
   ]
 }
